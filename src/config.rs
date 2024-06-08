@@ -35,16 +35,14 @@ pub enum ValidModel {
 #[serde(deny_unknown_fields)]
 pub struct ChatMessage {
     pub role: String,
-    pub content: String,
-    pub tool_calls: Option<Value>, // This is to be compatible with Mistral
+    pub content: String
 }
 
 impl ChatMessage {
     pub fn new(role: String, content: String) -> Self {
         Self {
             role,
-            content,
-            tool_calls: None,
+            content
         }
     }
 }
